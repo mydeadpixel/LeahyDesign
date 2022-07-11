@@ -1,0 +1,143 @@
+//  Base
+//  -----------------------------
+ 
+ body {
+	background:rgba($light-gray,0.1); 
+	//http://subtlepatterns.com/page/9/#
+  	//background:url("/assets/img/bg/subtle_white_feathers.png");
+}
+
+.margin-tb {
+	margin: 1.6rem auto;
+}
+
+//preloading
+#preloader {
+    z-index: 100;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99;
+}
+#status {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(/assets/img/preloader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+}
+
+//ASSETS 
+.logo-small {
+	width: 160px;
+	margin-bottom: 40px;
+	@include breakpoint(small only) { 
+		margin-bottom: 60px;
+	}
+}
+
+.home {
+	border-left: solid 10px map-get($foundation-palette, primary);
+	.description {
+		padding-top:1rem;
+		padding-bottom:1rem;
+		@include breakpoint(small only) { 
+			padding:2.5rem 1.4rem; 
+		}
+	}
+	.orbit {
+		@include breakpoint(small only) { 
+			display:none;
+		}
+		.orbit-container {
+			height:140px!important;
+		}
+	}
+}
+.description {
+	padding-top:6rem;
+	padding-bottom:6rem;
+ 	@include breakpoint(small only) { 
+		padding:2.5rem 1.4rem; 
+	}
+} 
+
+//WORK-CARD
+.work {
+	background-size:cover;
+	//background-size:auto 100%;
+	
+	background-position: top center;
+	.work-content {
+		position: relative;
+		.h1,p {
+			color:$white;
+		}
+		.button {
+			margin-top: 2rem;
+			border: 2px solid #ececec;
+			border-radius: 2px;
+			font-size: 0.8rem;
+			font-family: $header-font-family;
+			color: #ececec;
+			text-transform: uppercase;
+			background-color: rgba(0,0,0,0.2);
+			-webkit-box-shadow: 0px 0px 86px 0px rgba(0,0,0,0.57);
+			&:hover {
+				@extend .bg-primary;
+				border: 2px solid map-get($foundation-palette, primary);
+			}
+			&:active {
+				@extend .bg-primary;
+				border: 2px solid map-get($foundation-palette, primary);
+			}
+			&:focus {
+				@extend .bg-primary;
+				border: 2px solid map-get($foundation-palette, primary);
+			}
+		}
+
+	    
+	}
+}
+
+
+// .img-work {
+//   line-height: 0;
+//  	@include breakpoint(medium only) { 
+// 		padding-bottom: map-get($grid-column-gutter, medium);
+// 	}
+// 	@include breakpoint(large) { 
+// 		padding-bottom: map-get($grid-column-gutter, large);
+// 	}
+// }
+
+
+//FOOTER
+footer {
+	$white075: rgba($white, 0.75);
+	background:$dark-gray; 	
+	    background:url("/assets/img/bg/black_denim.png");
+	  
+	color:$white075;
+	.logo-small {
+		height: 60px;
+	}
+	.fill-light-gray{fill:$white075;} 
+
+	a {
+    color: $white075;
+    &:hover, &:focus {
+      color: rgba($white, 1);
+    }
+  }
+}

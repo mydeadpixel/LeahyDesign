@@ -1,0 +1,46 @@
+---
+title: Tackle Hunger Together
+
+layout: posts
+
+intro: A partnership between ITV, the United Nations World Food Programme (WFP) and World Rugby to coincide with RWC 2015 aims to raise awareness and funds for families facing hunger around the world.
+
+desc: I was the brand and design lead for ITV's tackle hunger together appeal for the Rugby World Cup 2015. I lead a small design team to design and develop a new brand to celebrate the partnership. Once the brand was approved by the key stakeholders, we developed the brand guidelines for our internal teams and partners, I was the main point of contact for all brand sign off to ensure consistency of the campaign.
+
+
+images: 
+    - {column: 12, url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-socialcards}
+    - {column: 12, url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-Email}
+    - {column: 12, url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-TShirt}
+    - {column: 12, url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-BrandGuidelines-Cover}
+    - {column: 12, url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-Logo-Alt}
+    - {column: 12, url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-Logo-Banner}
+    - {column: 12,  url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-hoarding-pitch}
+    - {column: 12,  url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-BrandGuidelines-1}
+    - {column: 12, url: rugby-world-cup-2015, file: ITV-Tackle-Hunger-BrandGuidelines-1.1}
+---
+
+ 
+  <div class="hero-bg height100 grid-table">
+    <div class="image-bg lazy" data-original="/assets/img/work/rugby-world-cup-2015/ITV-Tackle-Hunger-BrandGuidelines-Cover.jpg"></div>
+  </div>
+
+  <section class="padding20 clearfix">
+    <div class="description row">
+      <div class="medium-8 medium-push-2 column text-justify">
+        <h1 class="">{{ title }}</h1>
+        <p class="intro">{{ intro }}</p>
+        <div class="newspaper">
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <!-- MAIN IMAGE REPEATER -->
+  <section class="padding20 clearfix">
+      {{#each images}}
+        <img class="medium-{{ column }} img-work columns lazy" data-original="/assets/img/work/rugby-world-cup-2015/{{ file }}.jpg" alt="{{ file }}"> 
+      {{/each}}
+  </section>
+ 

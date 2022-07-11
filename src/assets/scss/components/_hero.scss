@@ -1,0 +1,113 @@
+//HERO
+.hero {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  height:576px;
+  min-height:100vh; 
+  color:$white;
+  background-size:cover;  //border: $white solid 15px;
+  background:url("/assets/img/bg/black_denim.png");
+  h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.3rem;
+    @include breakpoint(small only) { 
+      font-size: 1.6rem;
+    }
+    @include breakpoint(medium only) { 
+      font-size: 2.2rem;
+    }
+  }
+  .h2 {
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 200;
+    @include breakpoint(small only) { 
+      font-size: 0.8rem;
+    }
+    @include breakpoint(medium only) { 
+      font-size: 1.2rem;
+    }
+  }
+  .button {
+    border: 1px solid #ececec;
+    color: #ececec;
+    &:hover {
+      @extend .bg-primary;
+    }
+    &:active {
+      @extend .bg-primary;
+    }
+    &:focus {
+      @extend .bg-primary;
+    }
+  }
+}
+.video-bg {
+    z-index: -100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    @include breakpoint(medium down) { 
+      display: none;
+    }
+} 
+
+.image-bg {
+    z-index: -100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    background-size:cover;
+    background-position: top center; 
+}
+
+.hero-page {
+  height:300px;
+  min-height:50vh;
+  background:$light-gray;
+  @include breakpoint(small only) { 
+    min-height:85vh;
+  }
+  //background-image: url(https://hd.unsplash.com/photo-1452421822248-d4c2b47f0c81);
+
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
+
+.ie8 {
+      .fullscreen-bg {
+        background: url('http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}
+//inline videos
+.video {
+   width:100%;
+   height:auto; 
+}

@@ -1,0 +1,268 @@
+//  Navigation
+//  -----------------------------
+
+
+//fontawesome down arrow
+.btn-arrow {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  display: inline-block;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:transparent!important;
+  .fa {
+    padding: 1rem;
+    font-size: 2.2rem!important;
+    color: rgba($white, 0.5);
+    border-radius: 50%;
+    background:transparent;
+    &:hover, &:focus {
+      color: rgba($white, 0.9);
+    }
+  }
+}
+    //NAV
+.page-work {
+   #navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+   }
+} 
+.top-bar {
+   text-align:center;
+   min-height: 10vh;
+   width:100%;
+   @include breakpoint(small only) {
+      display: none;
+    }
+}
+ul.menu {
+      float:right;
+      display: inline;
+      @include breakpoint(small only) {
+         float:none;
+         display: block;
+      }
+
+      li {
+         @include breakpoint(small only) { 
+            display: block;
+         }
+         a {
+            padding: 1.2rem 2rem;
+            border: transparent solid 1px;
+            $radius:10px;
+            &:hover, &:focus {
+               border: $primary-color solid 1px;
+            }
+            @include breakpoint(small only) { 
+               margin:1rem 0;
+               padding: 1rem 1rem;
+               font-size: 2rem;
+            }
+         }
+         .active {
+            border: $primary-color solid 1px;
+         }
+         a.home {
+            position:absolute; top:0; left: 0; 
+            border: none;  &:hover, &:focus { border: none; }
+            .active { border: none; }
+         }
+      }
+   }
+.is-stuck {
+//box-shadow: 0px 0px 32px 0px rgba(140,139,139,0.1);
+//transition: box-shadow 0.4s ease-in-out;
+}
+.mobile-menu {
+   display: none;
+   cursor: pointer;
+   @include breakpoint(small only) {   
+      position:fixed; 
+      top: 0;
+      right: 0;
+      display: block;
+      height: 35px;
+      width: 35px;
+      margin:0.85rem;
+      z-index: 999;
+   }
+}
+
+.mobile-menu-full {
+   @include breakpoint(small only) {   
+      display: block;
+      position:fixed; 
+      top: 0;
+      right: 0;
+      padding-top: 10rem;
+      min-height: 100vh;
+      min-width: 100vw;
+      z-index: 888;
+      background:$black;
+      a {color: $white;}
+   }
+}
+
+
+.page-menu {
+   position:fixed; 
+   top: 10px;
+   right: 10px;
+   display: block;
+   padding:1rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+   @include breakpoint(small only) {   
+   }
+   transition: background-color 0.25s ease-out, color 0.25s ease-out;  
+   background:$white;
+   	&:hover {
+        background-color:$light-gray;
+        .burger-icon:before, .burger-icon:after {background-color:$white;} 
+    }
+    &:active {
+    }
+    &:focus {
+    }
+
+}
+
+//Burger
+// Burger parts
+//
+// (---) top    -> &::before
+// [---] middle -> &
+// (---) bottom -> &::after
+
+
+// Vendor prefixes
+$sass-burger-add-vendor-prefixes: true !default;
+
+// Burger
+@mixin burger($width: 35px, $height: 5px, $gutter: 4px, $color: $black, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+
+    @if $sass-burger-add-vendor-prefixes {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    user-select: none;
+
+    // 1. Fixes jagged edges in Firefox, see issue #10.
+    &, &::before, &::after {
+        display: block;
+        width: $width;
+        height: $height;
+        background-color: $color;
+        outline: 1px solid transparent; // 1
+        @if $border-radius != 0 {
+            border-radius: $border-radius;
+        }
+
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transition-property: background-color, -webkit-transform;
+            -moz-transition-property: background-color, -moz-transform;
+            -o-transition-property: background-color, -o-transform;
+        }
+        transition-property: background-color, transform;
+
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transition-duration: $transition-duration;
+            -moz-transition-duration: $transition-duration;
+            -o-transition-duration: $transition-duration;
+        }
+        transition-duration: $transition-duration;
+    }
+
+    &::before, &::after {
+        position: absolute;
+        content: "";
+    }
+
+    &::before {
+        top: -($height + $gutter);
+    }
+
+    &::after {
+        top: $height + $gutter;
+    }
+}
+
+
+// Select parts of the burger
+@mixin burger-parts {
+    &, &::before, &::after {
+        @content;
+    }
+}
+
+@mixin burger-top {
+    &::before {
+        @content;
+    }
+}
+
+@mixin burger-middle {
+    & {
+        @content;
+    }
+}
+
+@mixin burger-bottom {
+    &::after {
+        @content;
+    }
+}
+
+
+// Burger animations
+@mixin burger-to-cross($color: auto) {
+    & {
+        background-color: transparent;
+    }
+    @if ($color != auto) {
+        &::before, &::after {
+            background-color: $color;
+        }
+    }
+    &::before {
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+            -moz-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+            -ms-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+            -o-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        }
+        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+    &::after {
+        @if $sass-burger-add-vendor-prefixes {
+            -webkit-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+            -moz-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+            -ms-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+            -o-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        }
+        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+}
+.burger-icon {
+    @include burger(23px, 4px, 6px, $light-gray);
+    
+}
+.burger-icon-is-active {
+    @include burger-to-cross;
+} 

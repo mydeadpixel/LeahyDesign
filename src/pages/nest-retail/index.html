@@ -1,0 +1,45 @@
+---
+title: ITV CR Report
+
+layout: posts
+
+intro: ITV continue to grow the business in a responsible and transparent way whilst harnessing the power of the nation’s most-loved and most-watched programmes to create long-term change for good.
+
+desc: Each year ITV align their CSR report with the annual report. Working with ITV Picture desk and our engagement team we produced a 45 page annual summary report with info graphics, high quality imagery beautifully put together to celebrate the highlights and achievements of ITV's CSR remit. Keeping the message of sustainability we only produced a limited number of prints choosing an ethical and sustainable printing partner to print on 100% recycled paper.
+
+
+images: 
+    - {column: 6, url: itv-cr-report, file: report-cover-3d-close}
+    - {column: 6, url: itv-cr-report, file: report-about-close}
+    - {column: 12, url: itv-cr-report, file: report-about}
+    - {column: 6,  url: itv-cr-report, file: report-people-cover-close}
+    - {column: 6,  url: itv-cr-report, file: report-people-close}
+    - {column: 12, url: itv-cr-report, file: report-people}
+    - {column: 12, url: itv-cr-report, file: report-planet}
+    - {column: 12, url: itv-cr-report, file: report-sp}
+---
+
+ 
+  <div class="hero-bg height100 grid-table">
+    <div class="image-bg lazy" data-original="/assets/img/work/itv-cr-report/itv_report_cover.jpg"></div>
+  </div>
+
+  <section class="padding20 clearfix">
+    <div class="description row">
+      <div class="medium-8 medium-push-2 column text-justify">
+        <h1 class="">{{ title }}</h1>
+        <p class="intro">{{ intro }}</p>
+        <div class="newspaper">
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <!-- MAIN IMAGE REPEATER -->
+  <section class="padding20 clearfix">
+      {{#each images}}
+        <img class="medium-{{ column }} img-work columns lazy" data-original="/assets/img/work/itv-cr-report/{{ file }}.jpg" alt="{{ file }}"> 
+      {{/each}}
+  </section>
+ 

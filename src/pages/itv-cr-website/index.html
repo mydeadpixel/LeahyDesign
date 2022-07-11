@@ -1,0 +1,44 @@
+---
+title: ITV CR Website
+
+layout: posts
+
+intro: ITV continue to grow the business in a responsible and transparent way whilst harnessing the power of the nation’s most-loved and most-watched programmes to create long-term change for good.
+desc: One of my main KPIs at ITV was to design and develop a new website for the Corporate Social Responsibility (CSR) side of the business. From the research phase it was important that the internal teams could publish news stories to keep the sector up to date with ITVs impacts and achievements in CSR. The website is built on Wordpress which the internal teams had previous experience using making the learning curve very small. The website is in its 3rd development cycle to align for next years annual report launch. Below are some screenshots of the wireframes for 2017.
+
+images: 
+    - {column: 4, url: itv-cr-website, file: ITVR-planning}
+    - {column: 4, url: itv-cr-website, file: ITVR-printouts}
+    - {column: 4, url: itv-cr-website, file: ITVR-screen}
+    - {column: 12, url: itv-cr-website, file: website-ux-long}
+    - {column: 12, url: itv-cr-website, file: itv_website_cover}
+    - {column: 12, url: itv-cr-website, file: website-homepage-mobile}
+    - {column: 12, url: itv-cr-website, file: website-3ps-long}
+    - {column: 6,  url: itv-cr-website, file: website-people-mobile}
+    - {column: 6,  url: itv-cr-website, file: website-people-mobile-long}
+    - {column: 12, url: itv-cr-website, file: website-article-desktop}
+---
+
+ 
+  <div class="hero-bg height100 grid-table">
+    <div class="image-bg lazy" data-original="/assets/img/work/itv-cr-website/cover.jpg"></div>
+  </div>
+
+  <section class="padding20 clearfix">
+    <div class="description row">
+      <div class="medium-8 medium-push-2 column text-justify">
+        <h1 class="">{{ title }}</h1>
+        <p class="intro">{{ intro }}</p>
+        <div class="newspaper">
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <!-- MAIN IMAGE REPEATER -->
+  <section class="padding20 clearfix">
+      {{#each images}}
+        <img class="medium-{{ column }} img-work columns lazy" data-original="/assets/img/work/itv-cr-website/{{ file }}.jpg" alt="{{ file }}"> 
+      {{/each}}
+  </section>

@@ -1,0 +1,102 @@
+//  Mods
+//  -----------------------------
+
+.height100 {
+  min-height: 600px;
+  min-height: 100vh;
+}
+.height90 {
+  min-height: 90vh;
+  min-height: 600px;
+}
+.height50 {
+  min-height: 50vh;
+  min-height: 300px;
+}
+.marginAll2 {
+  margin:2rem;
+}
+.paddingAll1 {
+  padding:1rem;
+}
+.padding {
+  padding:map-get($grid-column-gutter, small)/2;
+  @include breakpoint(medium only) { 
+    padding:map-get($grid-column-gutter, medium)/2;
+  }
+  @include breakpoint(large) { 
+    //padding:map-get($grid-column-gutter, large)/2;
+  }
+}
+.padding20 {
+  padding: map-get($grid-column-gutter, small)/2;
+  @include breakpoint(medium only) { 
+    padding: map-get($grid-column-gutter, medium)/2;
+  }
+  @include breakpoint(large) { 
+    //padding: map-get($grid-column-gutter, large)/2;
+  }
+}
+
+.bg-grey {		background:$light-gray;	color:$white;}
+.bg-black {		background:$black; 		  color:$white;}
+.bg-white {		background:$white;		 color:$black;}
+.bg-primary {	background:map-get($foundation-palette, primary);		 color:$white;}
+
+.fill-black{fill:$black;} 
+.fill-light-gray{fill:$light-gray;} 
+.fill-white{fill:$white;} 
+.fill-primary{fill:map-get($foundation-palette, primary);} 
+
+.text-black{color:$black;} 
+.text-light-gray{color:$light-gray;} 
+.text-white{color:$white;}
+.text-primary{color:map-get($foundation-palette, primary);} 
+
+.skills span {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  padding: 4px 6px;
+  font-size: 0.95rem;
+  @extend .bg-grey;
+}
+
+.column {
+  padding-bottom:map-get($grid-column-gutter, small);
+}
+.filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100%;
+    background: rgba(0,0,0,0.2) url(/assets/img/overlay.png) repeat 0 0;
+}
+.fa-3 {
+  margin:1rem 1rem 0 0;
+  font-size: 2.5rem!important;
+}
+.fa-2 {
+  margin:1rem 1rem 0 0;
+  font-size: 1.5rem!important;
+}
+.social {
+  a {
+    color: rgba($white, 0.75);
+    &:hover, &:focus {
+      color: rgba($white, 1);
+    }
+  }
+}
+.last {
+  margin-right: 0;
+}
+
+.shadow {
+  box-shadow: 0px 0px 32px 0px rgba(140,139,139,0.1);
+  box-shadow: 0px 0px -32px 0px rgba(140,139,139,0.1);
+}
+.shadow-text {
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+}

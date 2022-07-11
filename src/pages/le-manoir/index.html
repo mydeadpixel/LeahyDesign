@@ -1,0 +1,50 @@
+---
+title: Le manoir
+
+layout: posts
+
+intro: The Belmond Le Manoir Aux Quat'Saisons is a Michelin star restaurant created by renowned chef Raymond Blanc.
+desc: The team at le manoir required a new recruitment website and social media presence to promote their work experience and internships as well as their apprenticeship and experienced job roles. We visited the restaurant over a period of a few weeks gathering stock footage and interviewing the staff for content. We treated our videos with instagram styled filters which tied into the bigger social media strategy. The site is heavily video led, structure to guide the user through 3 main sections. The first section contains videos around the experience of working at the le manoir followed by the expertise you gain, finishing with videos covering what opportunities are available, from work experience and internships through to apprenticeships and experienced roles. We filmed and edited over 30 videos which were also shared on instagram and twitter.
+
+images: 
+    - {column: 4, url: le-manoir, file: le-manoir-website-1}
+    - {column: 4, url: le-manoir, file: le-manoir-videos-blk}
+    - {column: 4, url: le-manoir, file: insta}
+    - {column: 6, url: le-manoir, file: le-manoir-ux-1}
+    - {column: 6, url: le-manoir, file: le-manoir-ux-2}
+    - {column: 6,  url: le-manoir, file: le-manoir-website-2}
+    - {column: 6,  url: le-manoir, file: le-manoir-website-3}
+---
+
+ 
+  <div class="hero-bg height100 grid-table">
+    <div class="image-bg lazy" data-original="/assets/img/work/le-manoir/le-manoir-cover.jpg"></div>
+  </div>
+
+  <section class="padding20 clearfix">
+    <div class="description row">
+      <div class="medium-8 medium-push-2 column text-justify">
+        <h1 class="">{{ title }}</h1>
+        <p class="intro">{{ intro }}</p>
+        <div class="newspaper">
+          <p>{{ desc }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN IMAGE REPEATER -->
+  <section class="padding20 clearfix">
+        <div class="medium-6 img-work column" style="padding-bottom: 0;">
+          <video id="video1" loop muted poster="/assets/img/video.jpg" class="video lazy" width="1200" height="480">
+            <source src="/assets/img/work/le-manoir/video/le-manoir-mobile.webm" type="video/webm">
+            <source src="/assets/img/work/le-manoir/video/le-manoir-mobile.mp4" type="video/mp4">
+            <source src="/assets/img/work/le-manoir/video/le-manoir-mobile.ogv" type="video/ogg">
+			    </video>
+	    	</div>
+	    	<img class="medium-6 img-work columns lazy-video1" data-original="/assets/img/work/le-manoir/le-manoir-mobile.jpg" width="1200" height="480" >
+        
+      {{#each images}}
+        <img class="medium-{{ column }} img-work columns lazy" data-original="/assets/img/work/{{ url }}/{{ file }}.jpg" alt="{{ file }}"> 
+      {{/each}}
+  </section>
